@@ -50,3 +50,4 @@ duplicate_rows = df_copy[df_copy.duplicated()]
 print("number of duplicates:" + str(len(duplicate_rows)))
 # no duplicate rows in df
 
+
