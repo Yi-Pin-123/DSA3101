@@ -50,4 +50,15 @@ duplicate_rows = df_copy[df_copy.duplicated()]
 print("number of duplicates:" + str(len(duplicate_rows)))
 # no duplicate rows in df
 
+print(df.columns)
 
+
+# Check the number of unique values in each column
+unique_values = df.nunique()
+print(unique_values[unique_values==1])
+print(unique_values[unique_values==1].index)
+
+drop_cols = unique_values[unique_values==1].index
+df = df.drop(columns=drop_cols)
+
+print(df.columns)
