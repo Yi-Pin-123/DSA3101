@@ -27,6 +27,8 @@ import matplotlib.pyplot as plt
 from IPython.display import clear_output, display
 from google.colab import output
 import time
+import numpy as np
+import os
 
 from rich.console import Console
 from rich.table import Table
@@ -65,6 +67,12 @@ console.print(Align("[bold green]Configuration complete![/bold green]", align="c
 # Authenticate and create BigQuery client
 auth.authenticate_user()
 project_id = "marketing-435421"  #------------------------------------------->Attention
+
+# Path to the service account JSON key file
+key_path = "marketing-435421-8ce10b942394.json"
+
+# Set the GOOGLE_APPLICATION_CREDENTIALS environment variable
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = key_path
 client = bigquery.Client(project=project_id)
 
 console.print(Panel(f"[bold green]Current project ID:[/bold green] {project_id}"))
