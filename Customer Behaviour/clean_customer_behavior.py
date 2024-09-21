@@ -1,7 +1,7 @@
 import numpy as np 
 import pandas as pd 
 
-df = pd.read_csv("Customer behaviour analysis\ecommerce_customer_data_large.csv")
+df = pd.read_csv("Customer Behaviour\ecommerce_customer_data_large.csv")
 df['Purchase Date'] = pd.to_datetime(df['Purchase Date'], format='%Y-%m-%d %H:%M:%S')
 
 """
@@ -41,5 +41,11 @@ df.dropna(axis=0, inplace=True)
 There is no duplicates after dropping columns and rows
 """
 sum(df.duplicated())
-df.info()
 
+
+"""Remove unwanted category that we are not using in our ecommerce company"""
+df =  df[df['Product Category'] != 'Clothing']
+
+
+
+# df.to_csv("Customer behaviour analysis\clean_customer_behaviour.csv")
