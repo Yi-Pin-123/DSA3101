@@ -44,7 +44,7 @@ sum(df.duplicated())
 
 
 """Remove unwanted category that we are not using in our ecommerce company"""
-df =  df[df['Product Category'] != 'Clothing']
+df =  df[df['Product Category'] != 'Books']
 
 
 
