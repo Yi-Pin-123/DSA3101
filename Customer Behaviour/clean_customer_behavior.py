@@ -46,6 +46,4 @@ sum(df.duplicated())
 """Remove unwanted category that we are not using in our ecommerce company"""
 df =  df[df['Product Category'] != 'Clothing']
 
-
-
-# df.to_csv("Customer behaviour analysis\clean_customer_behaviour.csv")
+#df.to_csv('Customer Behaviour\customer_dataset_1.csv')
